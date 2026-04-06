@@ -14,7 +14,7 @@ export default function Hero() {
         loop:true
       });
       return () => {
-        typed.destroy
+        typed.destroy()
       }
   }, [])
   return (
