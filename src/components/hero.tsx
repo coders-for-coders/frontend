@@ -2,8 +2,21 @@
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Typed from 'typed.js';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
+  const motto = useRef(null);
+  useEffect(() => {
+      const typed = new Typed(motto.current, {
+        strings:["Unite", "Thrive", "Excel"],
+        typeSpeed:50,
+        loop:true
+      });
+      return () => {
+        typed.destroy
+      }
+  }, [])
   return (
     <div className="p-10 sm:p-10 m-5 rounded-3xl bg-slate-950 text-white flex items-center justify-center overflow-hidden shadow-2xl">
       <div className="w-full max-w-6xl px-4 sm:px-6">
@@ -16,8 +29,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl sm:text-4xl md:text-5xl lg:text-8xl font-extrabold uppercase leading-tight tracking-tight"
             >
-              Where <span className="text-purple-500">Coders</span> Unite &
-              Thrive
+              Where <span className="text-purple-500">Coders <br/></span> <span ref={motto}/>
             </motion.h1>
             
             <motion.p 
