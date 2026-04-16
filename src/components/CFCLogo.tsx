@@ -8,6 +8,7 @@ export default function CFCLogo() {
         alt="CFC Logo"
         fill
         className="object-cover"
+        sizes="(max-width: 640px) 40px, 48px"
         priority
       />
     </div>
