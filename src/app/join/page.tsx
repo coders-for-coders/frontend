@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import NavBar from "@/components/navBar";
-import Footer from "@/components/footer";
+import NavBar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Github, MessageCircle, ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
