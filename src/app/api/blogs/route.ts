@@ -9,6 +9,7 @@ export async function GET() {
     const cleaned = blogs.map(({ _id, ...rest }) => ({ id: _id.toString(), ...rest }));
     return NextResponse.json(cleaned);
   } catch (error) {
+    console.error("DB Fetch Error (Blogs):", error);
     return NextResponse.json({ error: "Failed to fetch blogs" }, { status: 500 });
   }
 }
@@ -21,6 +22,7 @@ export async function POST(request: Request) {
     const result = await db.collection("blogs").insertOne(body);
     return NextResponse.json({ id: result.insertedId.toString(), ...body });
   } catch (error) {
+    console.error("DB Insert Error (Blogs):", error);
     return NextResponse.json({ error: "Failed to publish blog" }, { status: 500 });
   }
 }
